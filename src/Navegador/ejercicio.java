@@ -13,7 +13,7 @@ public class ejercicio {
         currentUrl = "";
     }
 
-    public void newUrl() {
+    private void newUrl() {
         Scanner sc = new Scanner(System.in);
         String url = sc.nextLine();
         if (currentUrl != null) {
@@ -24,7 +24,7 @@ public class ejercicio {
         getCurrentUrl();
     }
 
-    public void goBack(){
+    private void goBack(){
         if (!backStack.isEmpty()){
             forwardStack.push(currentUrl);
             currentUrl = backStack.pop();
@@ -35,7 +35,7 @@ public class ejercicio {
         getCurrentUrl();
     }
 
-    public void goForward(){
+    private void goForward(){
         if (!forwardStack.isEmpty()){
             backStack.push(currentUrl);
             currentUrl = forwardStack.pop();
@@ -46,7 +46,7 @@ public class ejercicio {
         getCurrentUrl();
     }
 
-    public void getCurrentUrl() {
+    private void getCurrentUrl() {
         if (currentUrl != "") {
             System.out.println("El URL actual es: " + currentUrl);
         }else{
